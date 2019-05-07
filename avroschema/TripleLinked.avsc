@@ -1,0 +1,140 @@
+{"namespace":"avroschema.linked", 
+     "name": "TripleLinked",
+     "type": "record", 
+     "fields": [
+        {"name": "system", "type" : ["null", "string"]},
+        {"name": "corpus", "type" : ["null", "string"]},
+        {"name": "article_id", "type" : ["null", "string"]},
+        {"name": "triple_id", "type" : ["null", "string"]},
+        {"name": "sentence_linked", "type": ["null", {
+            "type": "record",
+            "name": "SentenceLinked",
+                "fields":[{
+                        "name": "tokens", 
+                        "type": ["null", {
+                            "type":"array", 
+                            "items":{
+                                "name":"TokenLinked", 
+                                "type":"record", 
+                                "fields":[
+                                    {"name":"pos", "type": ["string", "null"]},
+                                    {"name":"ner", "type": ["string", "null"]},
+                                    {"name":"span", "type": {
+                                            "type" : "record", "name" : "Span", 
+                                            "fields" : [
+                                                {"name" : "start_index", "type" : ["int", "null"]},
+                                                {"name" : "end_index", "type" : ["int", "null"]}
+                                            ]
+                                        }
+                                    }, 
+                                    {"name": "lemma", "type": ["string", "null"]},
+                                    {"name": "word", "type": ["string", "null"]},
+                                    {"name": "index", "type": ["int", "null"]},
+                                    {"name": "w_link", "type": {
+                                        "name": "WikiLink", 
+                                        "type": "record", 
+                                        "fields": [
+                                            {"name": "offset_begin_ind", "type": "int"},
+                                            {"name": "offset_end_ind", "type": "int"},
+                                            {"name": "phrase", "type": "string"},
+                                            {"name": "wiki_link", "type": "string"}
+                                        ]}
+                                    }
+                                ]
+                            }
+                        }]
+                    },
+                    {"name": "s_id", "type": ["int", "null"]},
+                    {"name": "sg", "type": ["string", "null"]},
+                    {"name": "dp", "type": ["string", "null"]}, 
+                    {"name": "span", "type": ["Span", "null"]}
+                ]
+            }]
+        },
+        {"name": "sentence_number", "type" : ["null", "string"]},
+        {"name": "modality", "type" : ["null", "string"]},
+        {"name": "polarity", "type" : ["null", "string"]},
+        {"name": "quantities", "type": ["null",{"type": "map", "values": "string"} ]},
+        {"name": "subject", "type" : ["null", {"type" : "array", "items": "TokenLinked"}]},
+        {"name": "relation", "type" : ["null", {"type" : "array", "items":"TokenLinked"}]},
+        {"name": "object", "type" : ["null", {"type" : "array", "items":"TokenLinked"}]},
+        {"name": "attribution_linked", 
+         "type": ["null",{
+            "type" : "record",
+            "name" : "AttributionLinked", 
+                "fields" : [
+                    {"name" : "predicate", "type" : ["null", "string"]},
+                    {"name" : "modality", "type" : ["null", "string"]},
+                    {"name" : "attribution_phrase_original", "type" : ["null", "string"]},
+                    {"name" : "polarity", "type" : ["null", "string"]},
+                    {"name": "time", "type" : ["null", 
+                        {"type" : "array", 
+                         "items": {
+                             "name": "TimeLinked",
+                             "type": "record",
+                             "fields": [
+                                {"name": "id", "type" : ["null", "string"]},
+                                {"name": "timex3_type", "type" : ["null", "string"]},
+                                {"name": "timex3_xml", "type" : ["null", "string"]},
+                                {"name": "disambiguated", "type": ["null", "string"]},
+                                {"name": "core_words", "type" : ["null", {"type" : "array", "items": "TokenLinked"}]},
+                                {"name": "pre_mods", "type" : ["null", {"type" : "array", "items": "TokenLinked"}]},
+                                {"name": "post_mods", "type" : ["null", {"type" : "array", "items": "TokenLinked"}]},
+                                {"name": "all_words", "type" : ["null", {"type" : "array", "items": "TokenLinked"}]},
+                                {"name": "predicate", "type" : ["null", "TokenLinked"]}
+                             ]
+                         }
+                        }]
+                    },
+                    {"name": "space", "type": ["null", {
+                        "type": "array",
+                        "items": {
+                            "type": "record",
+                            "name": "SpaceLinked",
+                            "fields": [
+                                {"name": "core_words", "type" : ["null", {"type" : "array", "items": "TokenLinked"}]},
+                                {"name": "pre_mods", "type" : ["null", {"type" : "array", "items": "TokenLinked"}]},
+                                {"name": "post_mods", "type" : ["null", {"type" : "array", "items": "TokenLinked"}]},
+                                {"name": "all_words", "type" : ["null", {"type" : "array", "items": "TokenLinked"}]},
+                                {"name": "predicate", "type" : ["null", "TokenLinked"]}
+                            ]
+                        }
+                    }]}
+                ]
+            }]
+        },
+        {"name": "dropped_words_subject", "type" : ["null", {"type" : "array", "items":"TokenLinked"}]},
+        {"name": "dropped_words_object", "type" : ["null", {"type" : "array", "items":"TokenLinked"}]},
+        {"name": "dropped_words_relation", "type" : ["null", {"type" : "array", "items":"TokenLinked"}]},
+        {"name": "negative_words", "type" : ["null", {"type" : "array", "items":"TokenLinked"}]},
+        {"name": "certainty_words", "type" : ["null", {"type" : "array", "items":"TokenLinked"}]},
+        {"name": "possibility_words", "type" : ["null", {"type" : "array", "items":"TokenLinked"}]},
+        {"name": "time_linked", "type" : ["null", {"type": "array", "items": "TimeLinked"}]},
+        {"name": "space_linked", "type" : ["null", {"type": "array", "items": "SpaceLinked"}]},
+        {"name": "subj_time_linked", "type": ["null", 
+            {"name": "TemporalWordLinked",
+             "type": "record", 
+             "fields": [
+                {"name": "modified_word", "type": ["null", "string"]},
+                {"name": "time_linked", "type": "TimeLinked"}
+             ]
+            }
+        ]},
+        {"name": "subj_space_linked", "type": ["null", 
+            {"name": "SpatialWordLinked",
+             "type": "record", 
+             "fields": [
+                {"name": "modified_word", "type": ["null", "string"]},
+                {"name": "space", "type": "SpaceLinked"}
+             ]
+            }
+        ]},
+        {"name": "rel_time_linked", "type": ["null", "TemporalWordLinked"]},
+        {"name": "rel_space_linked", "type": ["null", "SpatialWordLinked"]},
+        {"name": "obj_time_linked", "type": ["null", "TemporalWordLinked"]},
+        {"name": "obj_space_linked", "type": ["null", "SpatialWordLinked"]},
+        {"name": "confidence_score", "type": ["null", "double"]},
+        {"name": "extraction_type", "type": ["null", "string"]},
+        {"name": "canonical_links", "type": ["null",{"type": "map", "values": "string"} ], "default": null}
+    ]
+}
