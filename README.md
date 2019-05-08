@@ -2,14 +2,14 @@
 
 <img src="img/opiec-logo.png" align="right" width=200>
 
-OPIEC is an Open Information Extraction (OIE) corpus, consisted of more than 341M triples extracted from the entire English Wikipedia. Each triple from the corpus is consisted of rich meta-data: each token from the subj/obj/rel along with NLP annotations (POS tag, NER tag, ...), provenance sentence along with the dependency parse, original (golden) links from Wikipedia, sentence order, space/time, etc. For more detailed explanation of the meta-data, see [here](#metadata). 
+OPIEC is an Open Information Extraction (OIE) corpus, consisted of more than 341M triples extracted from the entire English Wikipedia. Each triple from the corpus is consisted of rich meta-data: each token from the subj/obj/rel along with NLP annotations (POS tag, NER tag, ...), provenance sentence along with the dependency parse, original (golden) links from Wikipedia, sentence order, space/time, etc (for more detailed explanation of the meta-data, see [here](#metadata)). 
 
 There are two major corpora released with OPIEC:
 
 1. OPIEC: an OIE corpus containing hundreds of millions of triples.
 2. WikipediaNLP: the entire English Wikipedia with NLP annotations.
 
-For more details concerning the construction, analysis and statistics of the corpus, read the AKBC paper [*"OPIEC: An Open Information Extraction Corpus*"](https://arxiv.org/pdf/1904.12324.pdf).
+For more details concerning the construction, analysis and statistics of the corpus, read the AKBC paper [*"OPIEC: An Open Information Extraction Corpus*"](https://arxiv.org/pdf/1904.12324.pdf). To download the data and get additional resources, please visit the [project page](https://www.uni-mannheim.de/dws/research/resources/opiec/).
 
 ## Reading the data
 
