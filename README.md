@@ -1,4 +1,4 @@
-# OPIEC: An Open Information Extraction corpus
+# OPIEC: An Open Information Extraction Corpus
 
 <img src="img/opiec-logo.png" align="right" width=200>
 
