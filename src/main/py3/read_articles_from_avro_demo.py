@@ -2,7 +2,7 @@ from avro.datafile import DataFileReader
 from avro.io import DatumReader
 import pdb 
 
-AVRO_SCHEMA_FILE = "../../../avroschema/WikiArticleLinked.avsc"
+AVRO_SCHEMA_FILE = "../../../avroschema/WikiArticleLinkedNLP.avsc"
 AVRO_FILE = "article.avro" # edit this line
 reader = DataFileReader(open(AVRO_FILE, "rb"), DatumReader())
 for article in reader:
