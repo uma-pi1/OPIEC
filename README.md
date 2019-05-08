@@ -11,6 +11,10 @@ There are two major corpora released with OPIEC:
 
 For more details concerning the construction, analysis and statistics of the corpus, read the AKBC paper [*"OPIEC: An Open Information Extraction Corpus*"](https://arxiv.org/pdf/1904.12324.pdf).
 
+## Reading the data
+
+The data is stored in [avro format](https://avro.apache.org/). 
+
 ## Metadata
 
 There are two corpora that we are releasing: OPIEC and WikipediaNLP. In this section, the metadata for the two corpora are described. 
