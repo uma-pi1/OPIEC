@@ -19,7 +19,8 @@ The data is stored in [avro format](https://avro.apache.org/). For details about
 
 There are two corpora that you can read: OPIEC and WikipediaNLP. For reading OPIEC, see `src/main/py3/read_articles_from_avro_demo.py`:
 
-```from avro.datafile import DataFileReader
+```python
+from avro.datafile import DataFileReader
 from avro.io import DatumReader
 import pdb 
 
