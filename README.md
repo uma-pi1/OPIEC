@@ -13,16 +13,19 @@ For more details concerning the construction, analysis and statistics of the cor
 
 ## Metadata
 
-There are two corpora that we are releasing: OPIEC and WikipediaNLP. In this section, the metadate for the two corpora are described. 
+There are two corpora that we are releasing: OPIEC and WikipediaNLP. In this section, the metadata for the two corpora are described. 
 
 ### WikipediaNLP
 
-### OPIEC
-Each OIE triple in OPIEC contains the following metadata:
+WikipediaNLP is the NLP annotation corpus for the English Wikipedia. Each object is a Wikipedia article containing:
 
-* **Article ID:**  Article ID of the Wikipedia article where the triple was extracted from. 
-* **Sentence:** The provenance sentence where the triple was extracted from. The sentence itself contains 4 major metadata:
-   1. ***Sentence number:*** the order of the sentence from within the Wikipedia page (e.g. if *"Sentence number: 3"*, then this sentence is the 3rd sentence witin the Wikipedia article). 
+* **Title:** the title of the article.
+* **ID:** the ID of the article.
+* **URL:** the URL of the article.
+* **Text:** the whole *clean text* of the article's content (excluding tables, infoboxes, etc.).
+* **Links:** all the original links within the article. For each link there is the offset begin/end index of the link within the article, the original phrase of the link, and the link itself.
+* **SentenceLinked:** The sentence itself contains 4 major metadata:
+   1. ***Sentence ID:*** the ID of the sentence (which is also the index of the sentence within the article).
    2. ***Span:*** the span of the sentence within the Wikipedia page. 
    3. ***Dependency parse:*** the dependency parse of the sentence. 
    4. ***Tokens:*** the sentence is represented as a list of tokens, each containing their own metadata (see *"Tokens metadata"* below).
@@ -34,6 +37,13 @@ Each OIE triple in OPIEC contains the following metadata:
    * ***Span:*** the span indices from within the article (has beginning and end index).
    * ***NER:*** the named entity type according to [Stanford Named Entity Recognizer (NER)](https://nlp.stanford.edu/software/CRF-NER.html). Possible types: PERSON, LOCATION, ORGANIZATION, MONEY, PERCENT, DATE, NUMBER, DURATION, TIME, SET, ORDINAL, QUANTITY, MISC and O (meaning - "no entity type detected"). 
    * ***WikiLink:*** contains offset begin/end index of the link within the article, the original phrase of the link, and the link itself.
+
+### OPIEC
+Each OIE triple in OPIEC contains the following metadata:
+
+* **Article ID:**  Article ID of the Wikipedia article where the triple was extracted from. 
+* **Sentence:** The provenance sentence where the triple was extracted from. For more details for the sentence metadata, see *"SentenceLinked"* metadata description in [WikipediaNLP](#wikipedianlp).
+ 1. ***Sentence number:*** the order of the sentence from within the Wikipedia page (e.g. if *"Sentence number: 3"*, then this sentence is the 3rd sentence witin the Wikipedia article). 
 * **Polarity:**  The polarity of the triple (either *positive* or *negative*).
 * **Negative words:** Words indicating negative polarity (e.g. *not, never, ...*).
 * **Modality:**  The modality of the triple (either *possibility* or *certainty*).
