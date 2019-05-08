@@ -13,13 +13,26 @@ For more details concerning the construction, analysis and statistics of the cor
 
 ## Reading the data
 
-The data is stored in [avro format](https://avro.apache.org/). For details about the metadata, see [here](#metadata). 
+The data is stored in [avro format](https://avro.apache.org/). For details about the metadata, see [here](#metadata). To read the data, you need the avroschema file found in the directory `avroschema`; more specifically `TripleLinked.avsc` and `WikiArticleLinkedNLP.avsc` for OPIEC and WikipediaNLP respectively. 
 
 ### Python
 
 There are two corpora that you can read: OPIEC and WikipediaNLP. For reading OPIEC, see `src/main/py3/read_articles_from_avro_demo.py`:
 
+```python
+from avro.datafile import DataFileReader
+from avro.io import DatumReader
+import pdb 
 
+AVRO_SCHEMA_FILE = "../../../avro/TripleLinked.avsc"
+AVRO_FILE = "../../../data/triples.avro"
+reader = DataFileReader(open(AVRO_FILE, "rb"), DatumReader())
+for triple in reader:
+    print(triple)
+    # use triple.keys() to see every field in the schema (it's a dictionary)
+    pdb.set_trace()
+reader.close()
+```
 
 Similarly, for reading WikipediaNLP, see `src/main/py3/read_articles_from_avro_demo.py`:
 
