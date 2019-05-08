@@ -42,3 +42,16 @@ Each OIE triple in OPIEC contains the following metadata:
 * **Confidence score:** The confidence score of the triple.
 * **Canonical links:** Canonical links for all links within the triple (follows redirections).
 * **Extraction type:**  Either one of the clause types listed in ClausIE (SVO, SVA, . . . ), or one of the implicit extractions proposed in MinIE (Hearst patterns, noun phrases modifying persons, . . . ).
+
+## Citation
+
+If you use any of these corpora, or use the findings from the paper, please cite: 
+
+```
+@inproceedings{gashteovski2019opiec,
+  title={OPIEC: An Open Information Extraction Corpus},
+  author={Gashteovski, Kiril and Wanner, Sebastian and Hertling, Sven and Broscheit, Samuel and Gemulla, Rainer},
+  booktitle={Proceedings of the Conference on Automatic Knowledge Base Construction (AKBC)},
+  year={2019}
+}
+```
