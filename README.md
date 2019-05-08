@@ -39,11 +39,12 @@ WikipediaNLP is the NLP annotation corpus for the English Wikipedia. Each object
    * ***WikiLink:*** contains offset begin/end index of the link within the article, the original phrase of the link, and the link itself.
 
 ### OPIEC
+
 Each OIE triple in OPIEC contains the following metadata:
 
 * **Article ID:**  Article ID of the Wikipedia article where the triple was extracted from. 
 * **Sentence:** The provenance sentence where the triple was extracted from. For more details for the sentence metadata, see *"SentenceLinked"* metadata description in [WikipediaNLP](#wikipedianlp).
- 1. ***Sentence number:*** the order of the sentence from within the Wikipedia page (e.g. if *"Sentence number: 3"*, then this sentence is the 3rd sentence witin the Wikipedia article). 
+* **Sentence number:** the order of the sentence from within the Wikipedia page (e.g. if *"Sentence number: 3"*, then this sentence is the 3rd sentence witin the Wikipedia article). 
 * **Polarity:**  The polarity of the triple (either *positive* or *negative*).
 * **Negative words:** Words indicating negative polarity (e.g. *not, never, ...*).
 * **Modality:**  The modality of the triple (either *possibility* or *certainty*).
