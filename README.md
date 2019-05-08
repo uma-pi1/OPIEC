@@ -141,6 +141,7 @@ WikipediaNLP is the NLP annotation corpus for the English Wikipedia. Each object
 
 Each OIE triple in OPIEC contains the following metadata:
 
+* **Triple ID:** Each triple has unique ID composed of 4 parts: "Wiki\_" + Wikipedia article ID + "\_" + sentence index + "\_" + triple index. For example, suppose we have the triple ID: Wiki\_5644\_2\_5 -- this means that the triple comes from the Wikipedia article having an ID 5644, comes from the 3rd sentence in the article (2+1 - here indexing starts from 0), and it is the 5th extraction from this sentence (here indexing starts from 1).
 * **Article ID:**  Article ID of the Wikipedia article where the triple was extracted from. 
 * **Sentence:** The provenance sentence where the triple was extracted from. For more details for the sentence metadata, see *"SentenceLinked"* metadata description in [WikipediaNLP](#wikipedianlp).
 * **Sentence number:** the order of the sentence from within the Wikipedia page (e.g. if *"Sentence number: 3"*, then this sentence is the 3rd sentence witin the Wikipedia article). 
