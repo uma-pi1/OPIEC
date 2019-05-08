@@ -15,6 +15,10 @@ For more details concerning the construction, analysis and statistics of the cor
 
 The data is stored in [avro format](https://avro.apache.org/). 
 
+### Python
+
+### Java
+
 ## Metadata
 
 There are two corpora that we are releasing: OPIEC and WikipediaNLP. In this section, the metadata for the two corpora are described. 
